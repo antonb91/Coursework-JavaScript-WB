@@ -1,0 +1,308 @@
+.wrapper {
+    width: 100vw; /* Ширина равна ширине окна браузера */
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+/* 1. ---------------------------------------Header------------------------------------ */
+.header {
+    width: 1200px;
+    max-width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to left, #a13dff, #e26fff);
+    color: #ffffff;
+    border-radius: 0 0 20px 20px;
+    margin-top: -8px;
+}
+.header__logo {
+    width: 200px;
+    height: auto; 
+    cursor: pointer;
+    display: flex;
+    transition: fill 0.5s;
+}
+.header__logo:hover {
+    filter: brightness(0) invert(1);
+}
+.header__input {
+    width: 880px;
+    height: 30px;
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    margin-right: auto;
+    padding: 10px;
+    font-family: Roboto;
+}
+.loupe__image {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.header__input:focus {
+    outline: 2px solid purple;
+}
+.header__input::placeholder {
+    opacity: 0.7;
+    font-family: Roboto;
+}
+.header__basket {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: fill 0.5s;
+    margin: 0 30px 10px 0;
+}
+.header__basket:hover {
+    filter: brightness(0) invert(1);
+}
+.header__basket-text {
+    color: black;
+    font-size: 15px;
+    font-family: Roboto;
+}
+.header__basket-image {
+    margin-bottom: -5px;
+    position: relative;
+}
+.header__basket-counter {
+    width: auto;
+    padding: 2px 5px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    right: 380px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.header__basket-counter:hover {
+    display: block;
+}
+/* ---------------------------------------Header-------------------------------------- */
+
+/* 2. ---------------------------------------Slider---------------------------------- */
+.slider {
+    width: 1160px;
+    max-width: 100%;
+    position: relative;
+    margin-top: 40px;
+}
+.slides {
+    display: flex;
+    overflow-x: hidden;
+    position: relative;
+}
+.slide {
+    display: none;
+}
+.slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.slider__prev,
+.slider__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+}
+.slider__prev:hover,
+.slider__next:hover {
+    color: purple;
+}
+.slider__prev {
+    left: 0;
+}
+.slider__next {
+    right: 0;
+}
+.slider__dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: rgb(254, 0, 254);
+}
+/* --------------------------------------------Slider-------------------------------------------------- */
+
+/* 3.----------------------------------------------------------------------------Shopping Cards------------------------------------------------------------------------ */
+.shopping__cards {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 12px; 
+}
+.shopping__card {
+    width: 220px;
+    height: 400px;
+    margin: 5px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.shopping__card-image {
+    width: 100%;
+    height: 70%;
+    border-radius: 10px 10px 0 0;
+}
+.shopping__card-price {
+    font-size: 25px;
+    font-family: Roboto;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+.shopping__card-price:hover {
+    color: purple;
+    
+}
+.shopping__card-date {
+    font-size: 15px;
+    font-family: Roboto;
+    font-weight: 800;
+    margin-top: 0;
+}
+.shopping__card-name {
+    font-size: 15px;
+    font-family: Roboto;
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+.shopping__card-rate {
+    font-size: 15px;
+    font-family: Roboto;
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+.shopping__card-reviews {
+    font-size: 15px;
+    font-family: Roboto;
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+.shopping__card-addbtn {
+    width: 110px;
+    height: 50px;
+    font-family: Roboto;
+    font-weight: 700;
+    background-color: purple;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    align-self: flex-end;
+}
+.shopping__card-addbtn:hover {
+    background-color: rgb(254, 0, 254);
+}
+/*------------------------------------------------------------------------------Shopping Cards-------------------------------------------------------------------------*/
+
+/* 4. ------------------------------------------------------------------------Basket Model Window--------------------------------------------------------------------- */
+.modal__window {
+    width: 400px;
+    max-width: 30%;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование модального окна */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid purple;
+    border-radius: 10px;
+    background: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.modal__window_header {
+    width: 400px;
+    display: flex;
+    gap: 90px;
+    padding: 30px;
+}
+.modal__window_header-title {
+    font-size: 25px;
+    color: black;
+    margin-left: 15px;
+    font-family: Roboto;
+}
+.modal__window_header-btn {
+    width: 130px;
+    height: 50px;
+    font-family: Roboto;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+    border: none;
+}
+.modal__window_header-btn:hover {
+    background-color: rgb(254, 0, 254);
+}
+.card__item {
+    display: flex; 
+    justify-content: space-between;
+}
+.modal__window-item {
+    font-family: Roboto;
+    display: inline-block;
+    font-weight: 400;
+    color: black;
+    margin: 0 0 10px 42px;
+}
+.modal__window-price {
+    font-family: Roboto;
+    font-weight: 500;
+    display: inline-block;
+    color: purple;
+    margin-right: 40px;
+}
+.modal__window-priceall {
+    font-family: Roboto;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+/* ------------------------------------------------------------------------Basket Model Window------------------------------------------------------------------------- */
+
+
+
+
